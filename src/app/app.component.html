@@ -1,0 +1,18 @@
+<h3>{{ result() }}</h3>
+<button (click)="changeYValue()">change y value to 12</button>
+
+<hr />
+
+<ul *ngFor="let car of cars()">
+  <li>{{ car.model }}</li>
+</ul>
+
+<hr />
+<h4>Select size</h4>
+<select
+  [ngModel]="size()"
+  (change)="onSizeChanged($any($event.target).value)"
+>
+  <option disabled>--Select of quantity--</option>
+  <option *ngFor="let size of sizes()">{{ size }}</option>
+</select>
